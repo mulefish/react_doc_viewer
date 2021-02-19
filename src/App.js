@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react'
 import { Header } from './helpers/Header.js'
 import DocumentList from './documents/index.js'
+import DocumentList2 from './documents/index2.js'
 
 export default function App() {
   return (
@@ -40,8 +41,7 @@ export default function App() {
           </Box>
           <Box bg="tomato" flex="1" overflow="auto">
             This is another container
-            <DocumentList />
-
+            <DocumentList2 />
           </Box>
         </Stack>
 

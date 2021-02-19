@@ -1,3 +1,8 @@
+/* 
+This will go away pretty soon - I want to make this work with my local data server first
+*/
+
+
 import { TYPE_LOAD_START, TYPE_LOAD_FINISH, TYPE_LOAD_ERROR, STATUS_LOADING, STATUS_ERROR, STATUS_FINISH } from '../helpers/constants.js'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
@@ -13,7 +18,7 @@ import {
     Flex
 } from '@chakra-ui/react'
 
-export default function DocumentList() {
+export default function DocumentList2() {
     const { data, status, error } = useSelector(state => state.documentReducer)
     const dispatch = useDispatch()
     function load() {
@@ -55,41 +60,19 @@ export default function DocumentList() {
 }
 
 function Item({ firstName, lastName, email, avatar }) {
-    const categories = ["finch", "tax", "dinosaur", "kittycat", "bewick", "swift"]
-    const category = Math.floor(Math.random() * categories.length);
-    const confidence = Math.random()
     return (
-        <Box p={5} borderWidth="1px">
+        <Box p={5} shadow="md" borderWidth="1px">
             <Flex align="center">
-                Pretent FontAwesome PDF icon here
-                <br />
-                {category}
-                <br />
-                {confidence}
-
+                <Avatar name={firstName} src={avatar} />
+                <Heading ml={2} fontSize="xl">
+                    {firstName} {lastName}
+                </Heading>
             </Flex>
 
-            {/* <Flex align="center" mt={2}>
+            <Flex align="center" mt={2}>
                 <Icon ml={2} name="email" size="20px" />
                 <Text ml={2}>{email}</Text>
-            </Flex> */}
+            </Flex>
         </Box>
     )
 }
-// function Item({ firstName, lastName, email, avatar }) {
-//     return (
-//         <Box p={5} shadow="md" borderWidth="1px">
-//             <Flex align="center">
-//                 <Avatar name={firstName} src={avatar} />
-//                 <Heading ml={2} fontSize="xl">
-//                     {firstName} {lastName}
-//                 </Heading>
-//             </Flex>
-
-//             <Flex align="center" mt={2}>
-//                 <Icon ml={2} name="email" size="20px" />
-//                 <Text ml={2}>{email}</Text>
-//             </Flex>
-//         </Box>
-//     )
-// }
