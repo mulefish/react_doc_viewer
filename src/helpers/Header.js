@@ -7,7 +7,7 @@ import About from './About.js'
 
 export function Header() {
     return (
-        <Flex justify="center" align="center">
+        <Flex justify="center" align="center" h='10%'>
             <Heading>helpers/Header.js</Heading>
             <About />
             <ColorModeSwitchButton mt={0} ml={3} p={0} />
