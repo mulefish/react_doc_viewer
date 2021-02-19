@@ -6,8 +6,18 @@ import {
     Button,
     Spinner,
     Wrap,
-    WrapItem
+    WrapItem,
+    IconButton,
+    Heading
 } from '@chakra-ui/react'
+import FontAwesome from 'react-fontawesome'
+//import { QuestionIcon } from '@chakra-ui/icons'
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import { FaBuilding } from 'react-icons/fa'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faFile } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function DocumentList() {
     const { data, status, error } = useSelector(state => state.documentReducer)
@@ -40,7 +50,6 @@ export default function DocumentList() {
                         />
                     ))
                     : null}
-                {/* </Flex> */}
             </Wrap>
         </>
     )
@@ -50,13 +59,11 @@ function Item({ category, confidence, id, avatar }) {
     return (
         <WrapItem>
             <Box p={5} borderWidth="1px" >
-                {/* <Flex align="center"> */}
-
+                <FontAwesomeIcon icon={faFile} size="lg" />
+                <br />
                 {category}
                 <br />
-                {confidence.toFixed(3)}
-                <br />
-                {id}
+                {confidence.toFixed(2)}
             </Box>
         </WrapItem>
     )
