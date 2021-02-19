@@ -4,12 +4,8 @@ import {
   Flex,
   Box,
   Divider,
-  Text,
-  GridItem,
-  Grid,
   Stack
 } from '@chakra-ui/react'
-// import { ColorModeSwitchButton } from './helpers/ColorModeSwitchButton.js'
 import { Header } from './helpers/Header.js'
 import DocumentList from './documents/index.js'
 
@@ -31,13 +27,13 @@ export default function App() {
           width={["100%", "25%"]}
           height={["10%", "100%"]}
         >
-          <DocumentList />
+          This is the left most container...  ...later this will be filled with buttons.
 
         </Flex>
         <Stack w='100%'>
-          <Box bg="tomato" flex="1" overflow="auto">
+          <Box bg="tomato" flex="2" overflow="auto">
 
-            This is a container
+            This is a container with a widget to add stuff into this container. This will be the uncategorized things.
 
             <DocumentList />
 
