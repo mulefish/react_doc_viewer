@@ -32,13 +32,14 @@ export default function App() {
 
         </Flex>
         <Stack w='100%'>
-          <Box bg="tomato" flex="2" overflow="auto">
+          <Box flex="2" overflow="auto">
 
             This is a container with a widget to add stuff into this container. This will be the uncategorized things.
 
             <DocumentList />
 
           </Box>
+          <Divider color='black' />
           <Box bg="tomato" flex="1" overflow="auto">
             This is another container
             <DocumentList2 />
