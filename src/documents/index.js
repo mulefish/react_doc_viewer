@@ -22,13 +22,15 @@ import { faFile } from '@fortawesome/free-solid-svg-icons'
 export default function DocumentList() {
     const { data, status, error } = useSelector(state => state.documentReducer)
     const dispatch = useDispatch()
-    function load() {
+    function load(where_am_I_called_from) {
         dispatch({ type: TYPE_LOAD_START })
 
         fetch('http://localhost:4040/doc_hub_get')
             .then(res => res.json())
             .then(data => dispatch({ type: TYPE_LOAD_FINISH, data: data }))
             .catch(error => dispatch({ type: TYPE_LOAD_ERROR, error: error }))
+
+
     }
 
     return (
@@ -37,7 +39,7 @@ export default function DocumentList() {
 
             <Wrap>
                 {status === STATUS_LOADING ? <Spinner color="orange.500" /> : null}
-                {status === STATUS_ERROR ? <h1>{error}</h1> : null}
+                {status === STATUS_ERROR ? <h1>ack! {error}</h1> : null}
 
                 {status === STATUS_FINISH
                     ? data.data.map(x => (

@@ -15,7 +15,8 @@ import {
     Stack,
     Text,
     Icon,
-    Flex
+    Flex,
+    AlertDescription
 } from '@chakra-ui/react'
 
 export default function DocumentList2() {
@@ -23,7 +24,7 @@ export default function DocumentList2() {
     const dispatch = useDispatch()
     function load() {
         dispatch({ type: TYPE_LOAD_START })
-
+        alert(" load ")
         fetch('https://reqres.in/api/users?page=1')
             .then(res => res.json())
             .then(data => dispatch({ type: TYPE_LOAD_FINISH, data: data }))
@@ -32,7 +33,6 @@ export default function DocumentList2() {
         //     .then(res => res.json())
         //     .then(data => dispatch({ type: TYPE_LOAD_FINISH, data: data }))
         //     .catch(error => dispatch({ type: TYPE_LOAD_ERROR, error: error }))
-
     }
 
     return (
@@ -41,7 +41,7 @@ export default function DocumentList2() {
 
             <Stack spacing={8}>
                 {status === STATUS_LOADING ? <Spinner color="orange.500" /> : null}
-                {status === STATUS_ERROR ? <h1>{error}</h1> : null}
+                {status === STATUS_ERROR ? <h1>ack! {error}</h1> : null}
 
                 {status === STATUS_FINISH
                     ? data.data.map(x => (
