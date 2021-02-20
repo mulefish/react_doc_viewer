@@ -46,7 +46,6 @@ export default function DocumentList() {
                             category={x.category}
                             confidence={x.confidence}
                             id={x.id}
-                            avatar={x.avatar}
                         />
                     ))
                     : null}
@@ -55,15 +54,17 @@ export default function DocumentList() {
     )
 }
 
-function Item({ category, confidence, id, avatar }) {
+function Item({ category, confidence, id }) {
     return (
         <WrapItem>
             <Box p={5} borderWidth="1px" >
                 <FontAwesomeIcon icon={faFile} size="lg" />
                 <br />
+                {id}
                 {category}
-                <br />
-                {confidence.toFixed(2)}
+                {confidence}
+                {/* <br />
+                {confidence.toFixed(2)} */}
             </Box>
         </WrapItem>
     )
