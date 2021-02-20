@@ -17,6 +17,8 @@ const cssForVerticleOnlyScrolling = {
 }
 
 export default function App() {
+  // https://codesandbox.io/s/32858p0ln6?file=/src/index.tsx 
+
   return (
     <ChakraProvider theme={theme}>
       <Header />
