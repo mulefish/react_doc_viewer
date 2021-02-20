@@ -19,7 +19,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { faFile } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function DocumentList() {
+export default function DocsNotInWorkingQueue() {
     const { data, status, error } = useSelector(state => state.documentReducer)
     const dispatch = useDispatch()
     function load(where_am_I_called_from) {
@@ -35,7 +35,7 @@ export default function DocumentList() {
 
     return (
         <>
-            <Button onClick={load}>Load</Button>
+            {/* <Button onClick={load}>Load</Button> */}
 
             <Wrap>
                 {status === STATUS_LOADING ? <Spinner color="orange.500" /> : null}
@@ -62,9 +62,10 @@ function Item({ category, confidence, id }) {
             <Box p={5} borderWidth="1px" >
                 <FontAwesomeIcon icon={faFile} size="lg" />
                 <br />
-                {id}
+                {/* {id} */}
                 {category}
-                {confidence}
+                <br />
+                {confidence.toFixed(2)}
                 {/* <br />
                 {confidence.toFixed(2)} */}
             </Box>

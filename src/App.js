@@ -7,8 +7,14 @@ import {
   Stack
 } from '@chakra-ui/react'
 import { Header } from './helpers/Header.js'
-import DocumentList from './documents/index.js'
-import DocumentList2 from './documents/index2.js'
+import DocsNotInWorkingQueue from './documents/docs_not_in_working_queue.js'
+import DocsInWorkingQueue from './documents/docs_in_working_queue.js'
+import LoanSelection from './documents/LoanSelection.js'
+
+const cssForVerticleOnlyScrolling = {
+  overflowY: 'scroll',
+  overflowX: 'hidden'
+}
 
 export default function App() {
   return (
@@ -28,21 +34,18 @@ export default function App() {
           width={["100%", "25%"]}
           height={["10%", "100%"]}
         >
-          This is the left most container...  ...later this will be filled with buttons.
+
+          <LoanSelection />
 
         </Flex>
         <Stack w='100%'>
-          <Box flex="2" overflow="auto">
-
-            This is a container with a widget to add stuff into this container. This will be the uncategorized things.
-
-            <DocumentList />
-
+          <Box flex="2" style={cssForVerticleOnlyScrolling}>
+            <DocsNotInWorkingQueue />
           </Box>
           <Divider color='black' />
-          <Box bg="tomato" flex="1" overflow="auto">
-            This is another container
-            <DocumentList2 />
+          {/* <Box bg="tomato" flex="1" overflow="auto"> */}
+          <Box bg="green.500" flex="1" style={cssForVerticleOnlyScrolling}>
+            <DocsInWorkingQueue />
           </Box>
         </Stack>
 
