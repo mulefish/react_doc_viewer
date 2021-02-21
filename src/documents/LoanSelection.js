@@ -25,10 +25,10 @@ export default function LoanSelection() {
 
     return (
         <Stack>
-            <center>
+            {/* <center>
                 Loans
             </center>
-            <Divider />
+            <Divider /> */}
             <Button onClick={load}>ABC Loan</Button>
             <Button onClick={load}>Blue Fish Brown Dirt</Button>
             <Button onClick={load}>Big Hat</Button>

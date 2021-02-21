@@ -3,18 +3,15 @@ import { useSelector, useDispatch } from 'react-redux'
 import {
     Flex,
     Heading,
-    IconButton,
-    Select,
-    Stack,
-    Button
+    Radio,
+    RadioGroup,
+    Box
 } from '@chakra-ui/react'
 import { ColorModeSwitchButton } from './ColorModeSwitchButton.js'
-import About from './About.js'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExpand } from '@fortawesome/free-solid-svg-icons'
-import { faCompress } from '@fortawesome/free-solid-svg-icons'
-import { QuestionIcon } from '@chakra-ui/icons'
+import About from './AboutButton.js'
 import { TYPE_GOTO_FULL_SCREEN, TYPE_LOAD_START, TYPE_LOAD_FINISH, TYPE_LOAD_ERROR, STATUS_LOADING, STATUS_ERROR, STATUS_FINISH } from '../helpers/constants.js'
+import { ExpandContractButton } from './ExpandContractButton.js'
+import { ViewportSizer } from './ViewportSizer.js'
 
 export function Header() {
 
@@ -22,55 +19,49 @@ export function Header() {
     const { data, status, error } = useSelector(state => state.displayLayoutReducer)
     //displayLayoutReducer
     const dispatch = useDispatch()
-    function doit() {
-        dispatch({ type: TYPE_GOTO_FULL_SCREEN })
+    // function doit() {
+    //     dispatch({ type: TYPE_GOTO_FULL_SCREEN })
 
 
-    }
-
+    // }
+    //https://react-icons.github.io/react-icons/search?q=contract
+    //    GrContract
+    // GrExpand
 
     return (
         <Flex justify="center" align="center" h='10%'>
-            status: { status} |
+            {/* status: { status} |
              data: { data} |
-            error: { error} |
+            error: { error} | */}
 
-            <Button onClick={() => doit()}>doit</Button>
-
-            <Heading>helpers/Header.js</Heading>
-
-            &nbsp;
-            &nbsp;
-
+            {/* <Button onClick={() => doit()}>doit</Button> */}
+            {/* <Heading>helpers/Header.js</Heading> */}
             <About />
-            {/* <ColorModeSwitchButton mt={0} ml={3} p={0} /> */}
             <ColorModeSwitchButton />
-            &nbsp;
-            &nbsp;
 
-            <FontAwesomeIcon icon={faExpand} size="lg"
-                aria-label='Go to full screen'
-            //  onClick={onOpen}
-            //  onClose={onClose}
-            />
-            &nbsp;
-            &nbsp;
-            <FontAwesomeIcon icon={faCompress} size="lg"
-                aria-label='Leave full screen mode'
-            //  onClick={onOpen}
-            //  onClose={onClose}
-            />
-
-            &nbsp;
-            &nbsp;
-            Layout: &nbsp;
-            {/* Yar - How to set 2/1 as the default selected value?!  */}
+            {/* Layout: &nbsp;
             <Select w="180px">
                 <option value="2/1" >2/1 | todo/done</option>
                 <option value="3/0">3/0 | todo/done</option>
                 <option value="1/2">1/2 | todo/done</option>
                 <option value="0/3">0/3 | todo/done</option>
-            </Select>
+            </Select> */}
+            <ExpandContractButton />
+
+            {/* 
+            <RadioGroup
+                defaultValue="2"
+                aria-label={`Select viewport sizes`}
+                pt={2}
+            >
+                <Radio value="1"></Radio>
+                <Radio value="2"></Radio>
+                <Radio value="3"></Radio>
+                <Radio value="4"></Radio>
+            </RadioGroup>
+
+                skldasflk */}
+            <ViewportSizer />
 
         </Flex>
     )

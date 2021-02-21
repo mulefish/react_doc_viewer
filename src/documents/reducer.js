@@ -7,8 +7,9 @@ const initialState = {
     counter: 0
 }
 
+const screen_state = STATUS_NOT_FULL_SCREEN;
+export function displayLayoutReducer(state = screen_state, action) {
 
-export function displayLayoutReducer(state = initialState, action) {
     switch (action.type) {
 
         case TYPE_GOTO_FULL_SCREEN:

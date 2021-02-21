@@ -11,20 +11,28 @@ import {
     ModalCloseButton,
     ModalFooter,
     IconButton,
+    useColorModeValue
 } from '@chakra-ui/react';
-import { QuestionIcon } from '@chakra-ui/icons'
+import { FaRegQuestionCircle, FaQuestionCircle } from 'react-icons/fa';
 
 function About() {
     const { isOpen, onClose, onOpen } = useDisclosure();
+    const SwitchIcon = useColorModeValue(FaRegQuestionCircle, FaQuestionCircle);
+
     return (
         <Box>
-            {/* <Button onClick={onOpen}>About</Button> */}
             <IconButton
-                icon={<QuestionIcon />}
-                aria-label='Purpose TBD... About.js'
+                size="md"
+                fontSize="lg"
+                aria-label={`Launch a modal`}
+                variant="ghost"
+                color="current"
+                marginLeft="2"
                 onClick={onOpen}
                 onClose={onClose}
+                icon={<SwitchIcon />}
             />
+
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent>
@@ -44,5 +52,4 @@ function About() {
         </Box>
     );
 }
-
 export default About;
