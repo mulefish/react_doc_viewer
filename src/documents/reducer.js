@@ -22,6 +22,10 @@ export function displayLayoutReducer(state = initialState, action) {
     }
 }
 
+
+//     
+
+
 export function documentReducer(state = initialState, action) {
     switch (action.type) {
 
