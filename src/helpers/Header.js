@@ -44,6 +44,7 @@ export function Header() {
 
             &nbsp;
             &nbsp;
+            Layout: &nbsp;
             <Select icon={QuestionIcon} w="180px">
                 <option value="option1">3/0 | todo/done</option>/option>
                 <option value="option1" selected="true">2/1 | todo/done</option>/option>

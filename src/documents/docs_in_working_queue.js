@@ -11,7 +11,7 @@ export default function DocsInWorkingQueue() {
     const { data, status, error } = useSelector(state => state.documentReducer)
     return (
         <Wrap>
-            {status === STATUS_LOADING ? <Spinner color="orange.500" /> : null}
+            {status === STATUS_LOADING ? <Spinner color="orange.500" speed="0.65s" size="xl" /> : null}
             {status === STATUS_ERROR ? <h1>{error}</h1> : null}
             {status === STATUS_FINISH
                 ? data.data
