@@ -21,7 +21,6 @@ function About() {
             {/* <Button onClick={onOpen}>About</Button> */}
             <IconButton
                 icon={<QuestionIcon />}
-                ml={6}
                 aria-label='Purpose TBD... About.js'
                 onClick={onOpen}
                 onClose={onClose}
@@ -33,12 +32,12 @@ function About() {
                     <ModalCloseButton />
                     <ModalBody>
                         This is an about. It is very informative.
-          </ModalBody>
+                    </ModalBody>
 
                     <ModalFooter>
                         <Button mr={3} onClick={onClose}>
                             Close
-             </Button>
+                        </Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>
