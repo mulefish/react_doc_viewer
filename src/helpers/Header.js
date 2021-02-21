@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react'
 import { ColorModeSwitchButton } from './ColorModeSwitchButton.js'
 import AboutModal from './AboutModal.js'
+import { NoteButton } from './NoteButton.js'
 //import { TYPE_GOTO_FULL_SCREEN, TYPE_LOAD_START, TYPE_LOAD_FINISH, TYPE_LOAD_ERROR, STATUS_LOADING, STATUS_ERROR, STATUS_FINISH } from '../helpers/constants.js'
 import { ExpandContractButton } from './ExpandContractButton.js'
 import { ViewportSizer } from './ViewportSizer.js'
@@ -30,6 +31,7 @@ export function Header() {
             <ColorModeSwitchButton />
             <ExpandContractButton />
             <ViewportSizer />
+            <NoteButton />
             &nbsp;
             &nbsp;
             &nbsp;
