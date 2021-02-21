@@ -2,13 +2,8 @@ import { TYPE_LOAD_START, TYPE_LOAD_FINISH, TYPE_LOAD_ERROR, STATUS_LOADING, STA
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {
-    Box,
-    Button,
     Spinner,
     Wrap,
-    WrapItem,
-    IconButton,
-    Heading
 } from '@chakra-ui/react'
 import Item from './Item.js'
 

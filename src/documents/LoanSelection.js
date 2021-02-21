@@ -10,6 +10,7 @@ import {
 
 export default function LoanSelection() {
     const { data, status, error } = useSelector(state => state.documentReducer)
+    //displayLayoutReducer
     const dispatch = useDispatch()
     function load(where_am_I_called_from) {
         dispatch({ type: TYPE_LOAD_START })
