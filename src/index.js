@@ -9,12 +9,13 @@ import {
 } from '@chakra-ui/react'
 
 import App from './App.js'
-import { documentReducer, displayLayoutReducer } from './documents/reducer.js'
+import { documentReducer, displayLayoutReducer, viewportReducer } from './documents/reducer.js'
 
 const store = createStore(
   combineReducers({
     documentReducer,
-    displayLayoutReducer
+    displayLayoutReducer,
+    viewportReducer
   })
 )
 

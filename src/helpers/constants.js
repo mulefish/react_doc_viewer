@@ -15,6 +15,7 @@ export const THREE_ZERO = "3_0"
 export const TWO_ONE = "2_1"
 export const ONE_TWO = "1_2"
 export const ZERO_THREE = "0_3"
+export const TYPE_SET_VIEWPORT_RATIOS = 'resize_the_viewport_ratios'
 
 
 // import {TYPE_LOAD_START,TYPE_LOAD_FINISH,TYPE_LOAD_ERROR,STATUS_LOADING,STATUS_ERROR,STATUS_FINISH} from './../constants/constants.js'

@@ -1,3 +1,5 @@
+import { useSelector, useDispatch } from 'react-redux'
+
 import {
   ChakraProvider,
   theme,
@@ -9,6 +11,9 @@ import { Header } from './helpers/Header.js'
 import DocsNotInWorkingQueue from './documents/docs_not_in_working_queue.js'
 import DocsInWorkingQueue from './documents/docs_in_working_queue.js'
 import LoanSelection from './documents/LoanSelection.js'
+import { THREE_ZERO, TWO_ONE, ONE_TWO, ZERO_THREE } from './helpers/constants.js'
+//import { TYPE_SET_VIEWPORT_RATIOS, THREE_ZERO, TWO_ONE, ONE_TWO, ZERO_THREE } from './helpers/constants.js'
+
 
 const cssForVerticleOnlyScrolling = {
   overflowY: 'scroll',
@@ -16,10 +21,30 @@ const cssForVerticleOnlyScrolling = {
 }
 
 export default function App() {
-  // https://codesandbox.io/s/32858p0ln6?file=/src/index.tsx 
+
+
+  const { status } = useSelector(state => state.viewportReducer)
+  let upperRatio = 2
+  let bottomRatio = 1
+  if (status === THREE_ZERO) {
+    upperRatio = 3
+    bottomRatio = 0
+  } else if (status === TWO_ONE) {
+    upperRatio = 2
+    bottomRatio = 1
+  } else if (status === ONE_TWO) {
+    upperRatio = 1
+    bottomRatio = 2
+  } else if (status === ZERO_THREE) {
+    upperRatio = 0
+    bottomRatio = 3
+  }
+
+
 
   return (
     <ChakraProvider theme={theme}>
+      HELLO THERE { status}
       <Header />
 
       <Flex direction={["column", "row"]} border="1px solid black" height="80vh" overflow="hidden">
@@ -31,20 +56,20 @@ export default function App() {
 
 
         <Stack w='100%'>
-          <Box flex="2" borderBottom="1px solid black" style={cssForVerticleOnlyScrolling}>
+          <Box flex={upperRatio} borderBottom="1px solid black" style={cssForVerticleOnlyScrolling}>
             <DocsNotInWorkingQueue />
           </Box>
-          <Box bg="green.500" flex="1" style={cssForVerticleOnlyScrolling}>
+          <Box bg="green.500" flex={bottomRatio} style={cssForVerticleOnlyScrolling}>
             <DocsInWorkingQueue />
           </Box>
         </Stack>
 
       </Flex>
-
-      ’Twas brillig, and the slithy toves
-      Did gyre and gimble in the wabe:
-All mimsy were the borogoves,
-      And the mome raths outgrabe.
+      <Box pl="20">
+        ’Twas brillig, and the slithy toves
+        Did gyre and gimble in the wabe:
+        All mimsy were the borogoves,
+        And the mome raths outgrabe.
       <br />
 “Beware the Jabberwock, my son!
       The jaws that bite, the claws that catch!
@@ -81,6 +106,7 @@ O frabjous day! Callooh! Callay!”
 All mimsy were the borogoves,
       And the mome raths outgrabe.
 
+      </Box>
     </ChakraProvider>
   )
 }
