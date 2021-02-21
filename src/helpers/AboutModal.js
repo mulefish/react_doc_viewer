@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { FaRegQuestionCircle, FaQuestionCircle } from 'react-icons/fa';
 
-function About() {
+function AboutModal() {
     const { isOpen, onClose, onOpen } = useDisclosure();
     const SwitchIcon = useColorModeValue(FaRegQuestionCircle, FaQuestionCircle);
 
@@ -52,4 +52,4 @@ function About() {
         </Box>
     );
 }
-export default About;
+export default AboutModal;

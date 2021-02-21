@@ -44,16 +44,12 @@ export default function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      HELLO THERE { status}
       <Header />
-
       <Flex direction={["column", "row"]} border="1px solid black" height="80vh" overflow="hidden">
         {/* LEFT MOST */}
         <Flex overflow="hidden" borderRight="1px solid black" direction={["row", "column"]} width={["100%", "25%"]} height={["10%", "100%"]}        >
           <LoanSelection />
         </Flex>
-
-
 
         <Stack w='100%'>
           <Box flex={upperRatio} borderBottom="1px solid black" style={cssForVerticleOnlyScrolling}>
