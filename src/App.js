@@ -45,7 +45,6 @@ export default function App() {
             <DocsNotInWorkingQueue />
           </Box>
           <Divider color='black' />
-          {/* <Box bg="tomato" flex="1" overflow="auto"> */}
           <Box bg="green.500" flex="1" style={cssForVerticleOnlyScrolling}>
             <DocsInWorkingQueue />
           </Box>
