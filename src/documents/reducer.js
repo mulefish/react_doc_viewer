@@ -2,16 +2,17 @@
 import { TYPE_SET_VIEWPORT_RATIOS, THREE_ZERO, TWO_ONE, ONE_TWO, ZERO_THREE, TYPE_GOTO_FULL_SCREEN, TYPE_LEAVE_FULL_SCREEN, STATUS_FULL_SCREEN, STATUS_NOT_FULL_SCREEN, TYPE_LOAD_START, TYPE_LOAD_FINISH, TYPE_LOAD_ERROR, STATUS_LOADING, STATUS_ERROR, STATUS_FINISH } from '../helpers/constants.js'
 
 
-
-const initialState = {
-    counter: 0
-}
+// + --------------------------------------------------------- + 
 // Two to One ratio between the XxXXXXXX and the YYYYYYY
 const viewportState = {
     status: TWO_ONE
 }
 export function viewportReducer(state = viewportState, action) {
-
+    // action.status will equal one of these: 
+    // THREE_ZERO
+    // TWO_ONE
+    // ONE_TWO
+    // ZERO_THREE
     switch (action.type) {
 
         case TYPE_SET_VIEWPORT_RATIOS:
@@ -22,7 +23,7 @@ export function viewportReducer(state = viewportState, action) {
     }
 }
 
-
+// + --------------------------------------------------------- + 
 // Failed idea left over
 const screen_state = STATUS_NOT_FULL_SCREEN;
 export function displayLayoutReducer(state = screen_state, action) {
@@ -41,9 +42,11 @@ export function displayLayoutReducer(state = screen_state, action) {
 }
 
 
-//     
+// + --------------------------------------------------------- + 
 
-
+const initialState = {
+    counter: 0
+}
 export function documentReducer(state = initialState, action) {
     switch (action.type) {
 
